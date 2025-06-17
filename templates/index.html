@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>媒体隐写工具</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>媒体隐写工具</h1>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="encode">隐藏数据</button>
+            <button class="tab-btn" data-tab="decode">提取数据</button>
+        </div>
+        
+        <div id="encode" class="tab-content active">
+            <div class="drop-zone" id="media-drop-zone">
+                <p>拖放媒体文件到这里</p>
+                <input type="file" id="media-input" accept=".png,.jpg,.jpeg,.bmp,.tiff,.mp3,.wav,.flac,.m4a,.mp4,.avi,.mov,.mkv">
+            </div>
+            
+            <!-- 修改数据文件输入部分 -->
+            <div class="drop-zone" id="data-drop-zone">
+                <p>拖放要隐藏的数据文件</p>
+                <input type="file" id="data-input">
+            </div>
+            
+            <!-- 修改信息显示部分 -->
+            <div class="info-box">
+                <p>文件信息: <span id="file-info">未选择文件</span></p>
+                <p>最大容量: <span id="capacity-info">--</span> (<span id="capacity-readable">--</span>)</p>
+                <p>数据大小: <span id="data-size">--</span> (<span id="data-readable">--</span>)</p>
+            </div>
+            
+            <button id="encode-btn" disabled>开始隐藏</button>
+        </div>
+        
+        <div id="decode" class="tab-content">
+            <div class="drop-zone" id="decode-drop-zone">
+                <p>拖放含密媒体文件</p>
+                <input type="file" id="decode-input" accept=".png,.jpg,.jpeg,.bmp,.tiff,.mp3,.wav,.flac,.m4a,.mp4,.avi,.mov,.mkv">
+            </div>
+            
+            <button id="decode-btn" disabled>提取数据</button>
+        </div>
+        
+        <div class="status" id="status"></div>
+    </div>
+    
+    <!-- 修改script标签 -->
+    <script type="module" src="/static/script.js"></script>
+</body>
+</html>
